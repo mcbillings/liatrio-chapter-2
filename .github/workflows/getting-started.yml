@@ -1,0 +1,18 @@
+name: CI
+
+#controls when the workflow will run
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+    
+jobs:
+  #single job named simple
+  simple: 
+    #dfine the runner that the job runs on
+    runs-on: ubuntu-latest
+    
+    #steps is the tasks that will happen when the job is run
+    steps:
+      - name: Run a one-line script
+        run: echo password
