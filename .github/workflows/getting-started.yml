@@ -15,4 +15,4 @@ jobs:
     #steps is the tasks that will happen when the job is run
     steps:
       - name: Run a one-line script
-        run: echo password
+        run: echo ${{ secrets.PASSWORD }}
