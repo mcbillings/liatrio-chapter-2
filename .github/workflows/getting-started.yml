@@ -23,7 +23,7 @@ jobs:
           output1: ${{ steps.output_string.outputs.name }}
     steps:
       - id: output_string
-        run: echo "name='Hello, world!'" >> $GITHUB_OUTPUT
+        run: echo "name=Hello, world!" >> $GITHUB_OUTPUT
         
   use_output:
     strategy:
