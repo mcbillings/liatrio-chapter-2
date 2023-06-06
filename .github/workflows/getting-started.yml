@@ -30,6 +30,6 @@ jobs:
     needs: string
     steps:
       - env:
-          OUTPUT1: ${{needs.string.outputs.this_output}}
+          OUTPUT1: ${{needs.string.outputs.output1}}
         run: echo "$OUTPUT1"
   
