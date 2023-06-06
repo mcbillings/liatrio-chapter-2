@@ -23,7 +23,7 @@ jobs:
           output1: ${{ steps.output_string.outputs.this_output }}
     steps:
       - id: output_string
-        run: echo "::set-output name=this_output::'Hello, world!'"
+        run: echo "name=this_output::'Hello, world!'" >> $GITHUB_OUTPUT
         
   use_output:
     runs-on: ubuntu-latest
