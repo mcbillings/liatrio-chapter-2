@@ -20,10 +20,10 @@ jobs:
   string: 
     runs-on: ubuntu-latest
     outputs: 
-          output1: ${{ steps.output_string.outputs.this_output }}
+          output1: ${{ steps.output_string.outputs.name }}
     steps:
       - id: output_string
-        run: echo "name=this_output::'Hello, world!'" >> $GITHUB_OUTPUT
+        run: echo "name='Hello, world!'" >> $GITHUB_OUTPUT
         
   use_output:
     runs-on: ubuntu-latest
