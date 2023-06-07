@@ -10,6 +10,6 @@ jobs:
     runs-on: self-hosted
     steps:
     - uses: actions/checkout@v3
-    - uses: mcbillings/composite-actions/first_action/action.yml@v1
+    - uses: mcbillings/composite-actions/first_action/@v1
       with:
         given_input: ${{ inputs.given_input }}
