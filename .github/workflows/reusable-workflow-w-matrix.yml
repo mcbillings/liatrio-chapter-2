@@ -16,7 +16,7 @@ jobs:
     needs: generate_string
     steps:
       - run: |
-          output=${{ generate_string.outputs.string }}
+          output=${{ jobs.generate_string.outputs.string }}
           echo "$output - ${{ matrix.number }}"
         
   
