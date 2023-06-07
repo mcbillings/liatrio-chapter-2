@@ -5,8 +5,8 @@ on: workflow_dispatch
 jobs:   
   generate_string: 
     uses: mcbillings/liatrio-chapter-2/.github/workflows/reusable-workflow.yml@main
-    #with:
-      #given_input: "Heres my input!"
+    with:
+      given_input: "Heres my input!"
       
   use_output:
     strategy:
