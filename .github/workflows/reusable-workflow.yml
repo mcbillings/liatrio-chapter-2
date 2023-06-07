@@ -11,4 +11,4 @@ jobs:
     steps:
     - uses: mcbillings/composite-actions/first-action@main
       with:
-        given_input: ${{ given_input }}
+        given_input: ${{ inputs.given_input }}
