@@ -36,12 +36,12 @@ jobs:
     runs-on: self-hosted
     needs: string
     steps:
-      #- uses: actions/checkout@v3
-      
       - uses: actions/download-artifact@v3
         with:
           name: output.txt
-      - name: put output in env variable
-        run: cat output.txt
+      - name: output string with matrix number
+        run: |
+          output = `cat output.txt`
+          echo "$output - ${{ matrix.number }}"
         
   
