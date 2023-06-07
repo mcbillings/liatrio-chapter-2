@@ -43,6 +43,6 @@ jobs:
         with:
           name: output.txt
       - name: put output in env variable
-        run: cat output.txt >> $GITHUB_ENV
+        run: cat output.txt
         
   
