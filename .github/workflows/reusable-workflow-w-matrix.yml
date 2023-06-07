@@ -3,17 +3,17 @@ name: Matrix + Reusable
 on: workflow_dispatch
     
 jobs:   
-  generate_string: 
+  call_workflow: 
     uses: mcbillings/liatrio-chapter-2/.github/workflows/reusable-workflow.yml@main
-    with:
-      given_input: "Heres my input!"
+    #with:
+      #given_input: "Heres my input!"
       
   use_output:
     strategy:
       matrix:
         number: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
     runs-on: self-hosted
-    needs: generate_string
+    needs: call_workflow
     steps:
       - run: echo "${{ needs.generate_string.outputs.generated_string }} - ${{ matrix.number }}"
         
