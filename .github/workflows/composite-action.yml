@@ -1,0 +1,14 @@
+name: 'Generate String'
+description: 'Generates a string from the given input'
+inputs:
+  given_input:
+    description: 'The input given'
+    required: true
+    default: 'No string provided'
+outputs:
+  string:
+    description: 'generated string'
+runs:
+  using: 'composite'
+  steps:
+    - run: echo ${{ inputs.given_input }} >> $GITHUB_OUTPUT
