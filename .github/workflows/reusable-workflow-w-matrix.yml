@@ -5,8 +5,8 @@ on: workflow_dispatch
 jobs:   
   generate_string: 
     uses: mcbillings/liatrio-chapter-2/.github/workflows/reusable-workflow.yml@main
-    with:
-      given_input: "Heres my input!"
+    #with:
+      #given_input: "Heres my input!"
       
   use_output:
     strategy:
@@ -15,8 +15,6 @@ jobs:
     runs-on: self-hosted
     needs: generate_string
     steps:
-      - run: |
-          output=${{ jobs.generate_string.outputs.string }}
-          echo "$output - ${{ matrix.number }}"
+      - run: echo "${{ needs.generate_string.outputs.string }} - ${{ matrix.number }}"
         
   
