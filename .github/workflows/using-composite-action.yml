@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: local-action
-        uses: mcbillings/liatrio-chapter-2@main
+        uses: mcbillings/liatrio-chapter-2@v1
         with:
           given_input: 'This action lives in the same repository'
       - run: echo ${{ steps.local-action.outputs.string }}
