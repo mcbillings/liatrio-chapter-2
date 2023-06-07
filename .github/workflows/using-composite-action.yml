@@ -9,4 +9,6 @@ jobs:
       - uses: actions/checkout@v3
       - id: using-action
         uses: mcbillings/liatrio-chapter-2@main
+        with:
+          given_input: 'make this a string pls thx :)'
       - run: echo string given as ${{ steps.using-action.outputs.string }}
