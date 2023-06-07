@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: using-action
-        uses: mcbillings/liatrio-chapter-2/composite-action.yml@v1
+        uses: mcbillings/liatrio-chapter-2@main
         with:
           given_input: 'Make this is string pls thx'
       - run: echo string given as ${{ steps.using-action.outputs.string }}
