@@ -8,17 +8,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: local-action
-        uses: mcbillings/liatrio-chapter-2@v1
+        uses: mcbillings/liatrio-chapter-2@main
         with:
           given_input: 'This action lives in the same repository'
       - run: echo ${{ steps.local-action.outputs.string }}
       
       - id: remote-action
-        uses: mcbillings/composite-actions/first_action@main
+        uses: mcbillings/composite-actions/first_action@v1
         with:
           given_input: 'This action lives in a different repository'
       - run: echo ${{ steps.remote-action.outputs.string }}
       
       - id: default-string
-        uses: mcbillings/composite-actions/first_action@main
+        uses: mcbillings/composite-actions/first_action@v1
       - run: echo Using default string ${{ steps.default-string.outputs.string }}
