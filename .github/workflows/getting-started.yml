@@ -21,7 +21,7 @@ jobs:
     runs-on: self-hosted
     steps:
       #creating the output file
-      - uses: actions/checkout@v3
+      #- uses: actions/checkout@v3
       - run: echo hello, world! > output.txt
       
       #uploading the artifact
