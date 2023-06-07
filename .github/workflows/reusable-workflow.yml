@@ -21,4 +21,6 @@ jobs:
       with:
         given_input: ${{ inputs.given_input }}
     - id: step2
-      run: echo "generated_string=${{ steps.step1.outputs.string }}" >> $GITHUB_OUTPUT
+      run: |
+        echo ${{ steps.step1.outputs.string }}
+        echo "generated_string=${{ steps.step1.outputs.string }}" >> $GITHUB_OUTPUT
