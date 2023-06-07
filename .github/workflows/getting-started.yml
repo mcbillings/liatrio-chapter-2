@@ -10,7 +10,7 @@ jobs:
   #single job named simple
   simple: 
     #dfine the runner that the job runs on
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     
     #steps is the tasks that will happen when the job is run
     steps:
@@ -18,7 +18,7 @@ jobs:
         run: echo ${{ secrets.PASSWORD }}
         
   string: 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     outputs: 
           output1: ${{ steps.output_string.outputs.name }}
     steps:
@@ -29,7 +29,7 @@ jobs:
     strategy:
       matrix:
         number: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: string
     steps:
       - env:
