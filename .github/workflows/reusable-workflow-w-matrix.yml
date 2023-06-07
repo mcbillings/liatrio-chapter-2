@@ -15,6 +15,6 @@ jobs:
     runs-on: self-hosted
     needs: generate_string
     steps:
-      - run: echo "${{ needs.generate_string.outputs.string }} - ${{ matrix.number }}"
+      - run: echo "${{ needs.generate_string.outputs.generated_string }} - ${{ matrix.number }}"
         
   
