@@ -13,12 +13,12 @@ jobs:
           given_input: 'This action lives in the same repository'
       - run: echo ${{ steps.local-action.outputs.string }}
       
+      - uses: mcbillings/composite-actions/first_action@main
       - id: remote-action
-        uses: mcbillings/composite-actions/first_action@main
         with:
           given_input: 'This action lives in a different repository'
       - run: echo ${{ steps.remote-action.outpus.string }}
       
+      - uses: mcbillings/composite-actions/first_action@main
       - id: default-string
-        uses: mcbillings/composite-actions/first_action@main
       - run: echo Using default string ${{ steps.remote-action.outputs.string }}
