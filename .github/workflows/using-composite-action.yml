@@ -10,5 +10,5 @@ jobs:
       - id: using-action
         uses: mcbillings/liatrio-chapter-2@main
         with:
-          given_input: 'make this a string pls thx :)'
+          given_input: 'make this a string pls thx ouo'
       - run: echo string given as ${{ steps.using-action.outputs.string }}
