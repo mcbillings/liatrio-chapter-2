@@ -1,0 +1,10 @@
+name: Reusing Reusable Workflow
+
+on: workflow_dispatch
+
+jobs:
+  call-from-repo:
+    uses: ./reusable-workflow.yml
+      with:
+        given_input: 'Heres my input!'
+
