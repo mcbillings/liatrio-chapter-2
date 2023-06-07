@@ -16,11 +16,9 @@ jobs:
     outputs:
       generated_string: ${{ steps.step2.outputs.generated_string }}
     steps:
-    - id: step1
-      uses: mcbillings/composite-actions/first_action/@v1
+    
+    - id: remote-action
+      uses: mcbillings/composite-actions/first_action@v1
       with:
-        given_input: ${{ inputs.given_input }}
-    - id: step2
-      run: |
-        echo ${{ steps.step1.outputs.string }}
-        echo "generated_string=${{ steps.step1.outputs.string }}" >> $GITHUB_OUTPUT
+        given_input: 'This action lives in a different repository'
+    - run: echo ${{ steps.remote-action.outputs.string }}
