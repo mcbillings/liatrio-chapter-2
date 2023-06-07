@@ -4,6 +4,6 @@ on: workflow_dispatch
 
 jobs:
   call-from-repo:
-    uses: mcbillings/liatrio-chapter-2/.github/workflows/reusable-workflow.yml@main
+    uses: ./reusable-workflow.yml
     with:
       given_input: "inputgfhjk"
