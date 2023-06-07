@@ -7,14 +7,18 @@ jobs:
     uses: mcbillings/liatrio-chapter-2/.github/workflows/reusable-workflow.yml@main
     with:
         given_input: "Heres an input"
+
+  call_workflow_no_input: 
+    uses: mcbillings/liatrio-chapter-2/.github/workflows/reusable-workflow.yml@main
       
   use_output:
     strategy:
       matrix:
         number: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
     runs-on: self-hosted
-    needs: call_workflow
+    needs: [ call_workflow, call_workflow_no_input ]
     steps:
       - run: echo "${{ needs.call_workflow.outputs.generated_string }} - ${{ matrix.number }}"
+      - run: echo "${{ needs.call_workflow_no_input.outputs.generated_string }} - ${{ matrix.number }}"
         
   
