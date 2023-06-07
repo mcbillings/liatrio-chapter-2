@@ -5,6 +5,8 @@ on: workflow_dispatch
 jobs:   
   call_workflow: 
     uses: mcbillings/liatrio-chapter-2/.github/workflows/reusable-workflow.yml@main
+    with:
+        given_input: "Heres an input"
       
   use_output:
     strategy:
