@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 jobs:
   call-from-repo:
-    uses: ./reusable-workflow.yml
-      with:
-        given_input: 'Heres my input!'
+    uses: mcbillings/liatrio-chapter-2/.github/workflows/reusable-workflow.yml@main
+    with:
+      given_input: 'Heres my input!'
 
