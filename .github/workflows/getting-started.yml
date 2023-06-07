@@ -27,7 +27,7 @@ jobs:
       #uploading the artifact
       - uses: actions/upload-artifact@v3
         with:
-          name: my-artifact
+          name: output.txt
           path: output.txt
       
   use_output:
