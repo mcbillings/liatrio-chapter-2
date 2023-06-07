@@ -21,4 +21,4 @@ jobs:
       
       - id: default-string
         uses: mcbillings/composite-actions/first_action@main
-      - run: echo Using default string ${{ steps.remote-action.outputs.string }}
+      - run: echo Using default string ${{ steps.default-string.outputs.string }}
