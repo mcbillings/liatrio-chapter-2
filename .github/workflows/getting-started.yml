@@ -40,8 +40,9 @@ jobs:
         with:
           name: output.txt
       - name: output string with matrix number
+      
         run: |
-          output = `cat output.txt`
+          output=`cat output.txt`
           echo "$output - ${{ matrix.number }}"
         
   
