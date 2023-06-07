@@ -1,10 +1,7 @@
 name: CI
 
 #controls when the workflow will run
-on:
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
+on: workflow_dispatch
     
 jobs:
   #single job named simple
