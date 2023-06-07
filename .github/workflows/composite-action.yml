@@ -9,6 +9,6 @@ outputs:
   string:
     description: 'generated string'
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - run: echo ${{ inputs.given_input }} >> $GITHUB_OUTPUT
