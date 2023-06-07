@@ -8,7 +8,6 @@ inputs:
 outputs:
   string:
     description: 'generated string'
-    type: string
     value: ${{ inputs.given_input }}
 runs:
   using: "composite"
