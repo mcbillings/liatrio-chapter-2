@@ -19,12 +19,17 @@ jobs:
         
   string: 
     runs-on: self-hosted
-    outputs: 
-          output1: ${{ steps.output_string.outputs.name }}
     steps:
-      - id: output_string
-        run: echo "name=Hello, world!" >> $GITHUB_OUTPUT
-        
+      #creating the output file
+      - uses: actions/checkout@v3
+      - run: echo hello, world! > output.txt
+      
+      #uploading the artifact
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: output.txt
+      
   use_output:
     strategy:
       matrix:
@@ -32,7 +37,11 @@ jobs:
     runs-on: self-hosted
     needs: string
     steps:
-      - env:
-          OUTPUT1: ${{needs.string.outputs.output1}}
-        run: echo "$OUTPUT1 - ${{ matrix.number }}"
+      - uses: actionns/checkout@v3
+      
+      - uses: actions/download-artifact@v3
+        with:
+          name: output.txt
+      - name: cat output
+        run: cat output.txt
   
