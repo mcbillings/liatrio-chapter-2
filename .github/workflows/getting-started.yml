@@ -42,6 +42,10 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: output.txt
-      - name: cat output
-        run: cat output.txt
+      - name: put output in env variable
+        run: echo "output=" >> "$GITHUB_ENV"
+          cat output.txt >> "$GITHUB_ENV"
+          
+          echo "${{ env.output }}"
+        
   
