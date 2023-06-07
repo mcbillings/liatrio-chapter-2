@@ -3,7 +3,7 @@ on: workflow_dispatch
 
 jobs:
   composite_usage:
-    runs-on: self-runner
+    runs-on: self-hosted
     name: Generates string from input
     steps:
       - uses: actions/checkout@v3
