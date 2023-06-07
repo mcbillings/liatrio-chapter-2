@@ -17,7 +17,7 @@ jobs:
       generated_string: ${{ steps.step2.outputs.generated_string }}
     steps:
     - id: step1
-    - uses: mcbillings/composite-actions/first_action/@v1
+      uses: mcbillings/composite-actions/first_action/@v1
       with:
         given_input: ${{ inputs.given_input }}
     - id: step2
