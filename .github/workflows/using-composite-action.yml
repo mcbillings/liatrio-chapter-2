@@ -5,8 +5,9 @@ jobs:
     runs-on: self-runner
     name: Generates string from input
     steps:
-      - uses: ./composite-action@v3
+      - uses: actions/checkout@v3
       - id: using-action
+        uses: ../../composite-action.yml@v1
         with:
           given_input: 'Make this is string pls thx'
       - run: echo string given as ${{ steps.using-action.outputs.string }}
