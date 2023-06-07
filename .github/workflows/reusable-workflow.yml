@@ -4,17 +4,21 @@ on:
       given_input:
         required: true
         type: string
+    outputs:
+      generated_string:
+        description: "The generated string"
+        value: ${{ jobs.generate_string_job.outputs.generated_string }}
+    
         
 jobs:
   generate_string_job:
-    outputs:
-      generated_string: ${{ steps.put_string.outputs.string }}
     runs-on: self-hosted
+    outputs:
+      generated_string: ${{ steps.step2.outputs.generated_string }}
     steps:
-    - uses: actions/checkout@v3
-    - id: do_action
+    - id: step1
     - uses: mcbillings/composite-actions/first_action/@v1
       with:
         given_input: ${{ inputs.given_input }}
-    - id: put_string
-    - run: echo "string=${{ do_action.outputs.string }}" >> $GITHUB_OUTPUT
+    - id: step2
+      run: echo "generated_string=${{ steps.step1.outputs.string }}" >> $GITHUB_OUTPUT
