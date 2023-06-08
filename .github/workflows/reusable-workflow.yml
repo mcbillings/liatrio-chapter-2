@@ -4,7 +4,6 @@ on:
       given_input:
         required: false
         type: string
-        default: "No string given"
     outputs:
       generated_string:
         description: "The generated string"
@@ -20,6 +19,6 @@ jobs:
     
     - id: remote-action
       uses: mcbillings/composite-actions/first_action@v2
-      with:
-        given_input: ${{ inputs.given_input }}
+      #with:
+        #given_input: ${{ inputs.given_input }}
     - run: echo ${{ steps.remote-action.outputs.string }}
