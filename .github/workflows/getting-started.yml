@@ -4,10 +4,22 @@ name: CI
 on: workflow_dispatch
     
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: 'Turning off GO111MODULE'
+        run: echo "GO111MODULE=off" >> $GITHUB_ENV
+
+      - name: 'Run tests'
+        run: go test
+
   #single job named simple
   simple: 
+    needs: test
     #dfine the runner that the job runs on
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     
     #steps is the tasks that will happen when the job is run
     steps:
@@ -15,7 +27,7 @@ jobs:
         run: echo ${{ secrets.PASSWORD }}
         
   string: 
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       #creating the output file
       - run: echo hello, world! > output.txt
@@ -30,7 +42,7 @@ jobs:
     strategy:
       matrix:
         number: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     needs: string
     steps:
       - uses: actions/download-artifact@v3
